@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>ICCT — Student Dashboard</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="c:\Users\josep\OneDrive\Desktop\STUDENT PORTAL\style.css">
+</head>
+<body>
+  <div class="page dashboard-page">
+    <header class="topbar">
+      <img src="https://www.edarabia.com/wp-content/uploads/2019/11/icct-colleges-rizal-philippines.jpg" alt="ICCT Logo" class="logo">
+      <div class="title">ICCT Colleges — Student Dashboard</div>
+
+      <div class="top-right">
+        <div id="welcomeName" class="welcome">Welcome, Guest</div>
+        <div id="dt" class="datetime"></div>
+        <div class="icon" title="Notifications" onclick="openNotifications()">🔔<span id="notifCount" class="badge">0</span></div>
+        <div class="icon" title="Theme" onclick="cycleTheme()">🎨</div>
+        <div class="icon" title="Logout" onclick="performLogout()">⎋</div>
+      </div>
+    </header>
+
+    <main class="dashboard-layout">
+      <section class="archive-column card">
+        <div class="archive-top">
+          <div class="archive-title">Archives</div>
+          <div class="muted">Click top items to open features</div>
+        </div>
+
+        <div class="folders" id="topFolders">
+          <!-- populated by JS -->
+        </div>
+
+        <div class="panel section">
+          <h3>My Subjects</h3>
+          <div id="subjectList"></div>
+        </div>
+
+        <div class="panel section">
+          <h3>Grades</h3>
+          <div id="gradesArea"></div>
+        </div>
+
+        <div class="panel section">
+          <h3>Payments</h3>
+          <div id="paymentsArea"></div>
+        </div>
+      </section>
+
+      <aside class="right-column">
+        <div class="card calendar-card">
+          <div class="cal-head">
+            <h3>Calendar</h3>
+            <div class="muted" id="monthLabel"></div>
+          </div>
+
+          <div class="cal-actions">
+            <input id="calTitle" placeholder="Event title">
+            <input id="calDate" type="date">
+            <div class="row"><button onclick="addEvent()">Add Event</button><button class="secondary" onclick="viewEvents()">View</button></div>
+          </div>
+
+          <div id="eventsList" class="events-list"></div>
+
+          <hr>
+          <div><strong>Announcements</strong></div>
+          <div id="announcementsList" class="ann-list"></div>
+        </div>
+
+        <div class="card suggestion-card">
+          <h4>Send Suggestion</h4>
+          <textarea id="suggestionText" rows="4" placeholder="Tell us how to improve portal"></textarea>
+          <div class="row"><button onclick="sendSuggestion()">Send</button><button class="secondary" onclick="viewSuggestions()">View</button></div>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="footer muted">ICCT Student Portal — Demo</footer>
+  </div>
+
+  <script src="c:\Users\josep\OneDrive\Desktop\STUDENT PORTAL\script.js"></script>
+</body>
+</html>

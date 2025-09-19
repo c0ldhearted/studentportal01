@@ -1,0 +1,63 @@
+:root{
+  --bg:#071226; --panel:#0b1730; --accent:#3da4ff; --muted:#9fb3cc; --text:#e6eef8; --glass:rgba(255,255,255,0.03);
+}
+body[data-theme="light"]{ --bg:#f3f7fb; --panel:#ffffff; --accent:#0f62fe; --muted:#395b7a; --text:#06203a; --glass:rgba(0,0,0,0.04); }
+body[data-theme="dim"]{ --bg:#111827; --panel:#0f1724; --accent:#6fb3ff; --muted:#9fb3cc; --text:#dbeafc; --glass:rgba(255,255,255,0.02); }
+
+*{box-sizing:border-box;font-family:Inter, system-ui, Arial, sans-serif}
+html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#031224);color:var(--text)}
+a{color:inherit}
+.page{min-height:100vh;display:flex;flex-direction:column}
+.topbar{display:flex;align-items:center;gap:12px;padding:12px 20px;background:transparent}
+.logo{width:56px;height:56px;object-fit:contain;border-radius:8px}
+.title{font-weight:800;font-size:18px}
+.top-right{margin-left:auto;display:flex;align-items:center;gap:10px}
+.datetime{font-size:13px;color:var(--muted)}
+.welcome{font-weight:600;margin-right:6px}
+.icon{cursor:pointer;position:relative;padding:6px;border-radius:8px;background:var(--glass)}
+.badge{position:absolute;top:-6px;right:-6px;background:#ff6b6b;color:white;border-radius:999px;padding:4px 7px;font-size:12px}
+
+.center-card{display:flex;justify-content:center;align-items:center;padding:30px}
+.auth-card{width:420px;background:linear-gradient(180deg,var(--panel),rgba(255,255,255,0.02));padding:18px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.6)}
+.tabs{display:flex;gap:6px;margin-bottom:12px}
+.tab{flex:1;padding:8px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.03);cursor:pointer}
+.tab.active{background:linear-gradient(90deg,var(--accent),#5aa6ff);color:white}
+.form label{display:block;margin-top:8px;color:var(--muted);font-size:13px}
+.form input, .form select, .form textarea{width:100%;padding:10px;margin-top:6px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--text)}
+.row{display:flex;gap:8px;align-items:center;margin-top:10px}
+.primary{background:linear-gradient(90deg,var(--accent),#5aa6ff);border:none;padding:10px 12px;color:white;border-radius:8px;cursor:pointer}
+.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px;border-radius:8px;color:var(--text);cursor:pointer}
+.muted{color:var(--muted)}
+.small{font-size:12px}
+.note{margin-top:12px}
+
+.hidden{display:none}
+
+/* Dashboard layout */
+.dashboard-page .dashboard-layout{display:grid;grid-template-columns:1fr 360px;gap:14px;padding:18px}
+.card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:12px;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,0.6)}
+.archive-column{padding:14px}
+.archive-top{display:flex;flex-direction:column}
+.archive-title{font-weight:800;font-size:18px}
+.folders{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+.folder{width:128px;height:110px;border-radius:8px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer}
+.folder h4{margin-top:8px;font-size:13px}
+.section{margin-top:12px}
+.panel h3{margin:0 0 8px 0}
+.subject-item{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed rgba(255,255,255,0.02)}
+.events-list{margin-top:8px}
+.event-row{padding:8px;border-radius:6px;margin-bottom:8px;background:linear-gradient(90deg,rgba(255,255,255,0.02),transparent)}
+.ann-list .ann{padding:8px;border-radius:6px;margin-top:8px;background:linear-gradient(90deg,rgba(255,255,255,0.02),transparent)}
+
+.calendar-card .cal-actions input{margin-top:6px}
+
+/* right column specifics */
+.right-column{display:flex;flex-direction:column;gap:12px}
+
+/* modal */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center}
+.modal-card{background:var(--panel);padding:16px;border-radius:10px;width:720px}
+
+/* responsive */
+@media(max-width:1000px){.dashboard-page .dashboard-layout{grid-template-columns:1fr 1fr}.center-card{padding:20px}}
+@media(max-width:700px){.dashboard-page .dashboard-layout{grid-template-columns:1fr}.topbar{flex-wrap:wrap}.top-right{margin-left:0}}

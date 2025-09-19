@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>ICCT — Faculty Dashboard</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="c:\Users\josep\OneDrive\Desktop\STUDENT PORTAL\style.css">
+</head>
+<body>
+  <div class="page dashboard-page">
+    <header class="topbar">
+      <img src="https://www.edarabia.com/wp-content/uploads/2019/11/icct-colleges-rizal-philippines.jpg" alt="ICCT Logo" class="logo">
+      <div class="title">ICCT Colleges — Faculty Dashboard</div>
+
+      <div class="top-right">
+        <div id="welcomeName" class="welcome">Welcome, Faculty</div>
+        <div id="dt" class="datetime"></div>
+        <div class="icon" title="Notifications" onclick="openNotifications()">🔔<span id="notifCount" class="badge">0</span></div>
+        <div class="icon" title="Theme" onclick="cycleTheme()">🎨</div>
+        <div class="icon" title="Logout" onclick="performLogout()">⎋</div>
+      </div>
+    </header>
+
+    <main class="dashboard-layout">
+      <section class="archive-column card">
+        <div class="archive-top">
+          <div class="archive-title">Faculty Tools</div>
+          <div class="muted">Gradebook, Email, Subjects</div>
+        </div>
+
+        <div class="panel section">
+          <h3>My Subjects</h3>
+          <div id="facultySubjects"></div>
+        </div>
+
+        <div class="panel section">
+          <h3>Gradebook</h3>
+          <div id="facultyGradebook"></div>
+        </div>
+
+        <div class="panel section">
+          <h3>Messages</h3>
+          <div id="inboxList"></div>
+          <div class="row" style="margin-top:8px">
+            <button onclick="openComposeModal()">Compose</button>
+          </div>
+        </div>
+      </section>
+
+      <aside class="right-column">
+        <div class="card calendar-card">
+          <div class="cal-head">
+            <h3>Calendar (All campuses)</h3>
+            <div class="muted" id="monthLabel2"></div>
+          </div>
+
+          <div id="eventsListFaculty" class="events-list"></div>
+
+          <hr>
+          <div><strong>Announcements</strong></div>
+          <div id="announcementsListF" class="ann-list"></div>
+        </div>
+
+        <div class="card">
+          <h4>Upload / Attach File to Email</h4>
+          <input id="attachFile" type="file">
+          <div class="row"><button onclick="sendMailFromFaculty()">Send Mail</button></div>
+        </div>
+      </aside>
+    </main>
+
+    <div id="composeModal" class="modal hidden">
+      <div class="modal-card">
+        <h3>Compose Message</h3>
+        <label>To (id, email, or 'all-students')</label>
+        <input id="mailTo">
+        <label>Subject</label>
+        <input id="mailSubject">
+        <label>Message</label>
+        <textarea id="mailBody" rows="6"></textarea>
+        <div class="row">
+          <button onclick="sendMailFromFaculty()">Send</button>
+          <button class="secondary" onclick="closeCompose()">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer muted">ICCT Faculty Portal — Demo</footer>
+  </div>
+
+  <script src="c:\Users\josep\OneDrive\Desktop\STUDENT PORTAL\script.js"></script>
+</body>
+</html>

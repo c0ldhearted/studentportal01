@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>ICCT Portal — Login / Register</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="c:\Users\josep\OneDrive\Desktop\STUDENT PORTAL\style.css">
+</head>
+<body>
+  <div class="page auth-page">
+    <header class="topbar">
+      <img src="https://www.edarabia.com/wp-content/uploads/2019/11/icct-colleges-rizal-philippines.jpg" alt="ICCT Logo" class="logo">
+      <div class="title">ICCT Colleges — Portal</div>
+      <div class="top-right">
+        <div id="dt" class="datetime"></div>
+      </div>
+    </header>
+
+    <main class="center-card">
+      <div class="card auth-card">
+        <div class="tabs">
+          <button id="btnLogin" class="tab active">Login</button>
+          <button id="btnRegister" class="tab">Register</button>
+        </div>
+
+        <!-- LOGIN -->
+        <form id="loginForm" class="form" onsubmit="login(event)">
+          <label>Student / Faculty ID or Email</label>
+          <input id="loginId" required placeholder="s2023xxxxx or prof@icct.edu.ph">
+          <label>Password</label>
+          <input id="loginPass" type="password" required>
+          <div class="row">
+            <button class="primary">Sign In</button>
+            <button type="button" class="muted" onclick="fillDemo()">Demo</button>
+          </div>
+        </form>
+
+        <!-- REGISTER -->
+        <form id="regForm" class="form hidden" onsubmit="register(event)">
+          <label>Full name</label>
+          <input id="regName" required>
+          <label>ID (unique)</label>
+          <input id="regID" required placeholder="s + 6 chars or f + ...">
+          <label>Email</label>
+          <input id="regEmail" type="email" required>
+          <label>Password</label>
+          <input id="regPass" type="password" required>
+          <label>Role</label>
+          <select id="regRole">
+            <option value="student">Student</option>
+            <option value="faculty">Faculty</option>
+            <option value="admin">Admin</option>
+          </select>
+          <label>Campus</label>
+          <select id="regCampus"></select>
+          <label>Program / Course</label>
+          <input id="regCourse" placeholder="e.g. BSIT">
+          <div class="row">
+            <button class="primary">Create Account</button>
+            <button type="button" class="secondary" onclick="clearRegister()">Clear</button>
+          </div>
+        </form>
+
+        <div class="muted small note">
+          After register/login you'll be redirected to your dashboard (student or faculty/admin).
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer muted">Prototype portal — replace assets/icct-logo.png with official ICCT logo for production.</footer>
+  </div>
+
+  <script src="c:\Users\josep\OneDrive\Desktop\STUDENT PORTAL\script.js"></script>
+</body>
+</html>
